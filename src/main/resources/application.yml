@@ -1,0 +1,24 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:h2:mem:usersdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update # Crea las tablas automáticamente
+    show-sql: true # Para ver las consultas en la terminal
+  h2:
+    console:
+      enabled: true # Habilita la consola web de H2
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
